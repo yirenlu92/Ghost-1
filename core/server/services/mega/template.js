@@ -291,13 +291,38 @@ figure blockquote p {
 }
 
 .site-url {
-    color: #15212A;
-    font-size: 16px;
+    background: #121FCF;
+background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    font-size: 40px;
     letter-spacing: -0.1px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+.presented-by {
+    color: #15212A;
+    font-size: 12px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.forwarded-to-you {
+    color: #15212A;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: -0.1px;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 .post-title {
@@ -936,23 +961,11 @@ ${ templateSettings.showBadge ? `
                                                 ` : ``}
                                                 ${ templateSettings.showHeaderTitle ? `
                                                 <tr>
+                                                    <td class="presented-by"><div style="width: 100% !important;"><a href="${site.url}">PRESENTED BY FMZ VENTURES</a></div></td>
+                                                </tr>
+                                                <tr>
                                                     <td class="site-url"><div style="width: 100% !important;"><a href="${site.url}">${site.title}</a></div></td>
                                                 </tr>
-                                                ` : ``}
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    ` : ''}
-
-
-                                    <tr>
-                                        <td class="post-title ${templateSettings.titleFontCategory === 'serif' ? `post-title-serif` : `` } ${templateSettings.titleAlignment === 'left' ? `post-title-left` : ``}">
-                                            <a href="${post.url}" class="post-title-link ${templateSettings.titleAlignment === 'left' ? `post-title-link-left` : ``}">${post.title}</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                 <tr>
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
                                                         By ${post.authors} –
@@ -960,9 +973,15 @@ ${ templateSettings.showBadge ? `
                                                         <a href="${post.url}" class="view-online-link">View online →</a>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                <td class="forwarded-to-you"><div style="width: 100% !important;">If this was forwarded to you, please feel free to subscribe <a href=${site.url} style="color:#121FCF">here</a>.</div></td>
+                                                </tr>
+                                                ` : ``}
                                             </table>
                                         </td>
                                     </tr>
+                                    ` : ''}
+
                                     ${ templateSettings.showFeatureImage && post.feature_image ? `
                                     <tr>
                                         <td class="feature-image ${hasFeatureImageCaption ? 'feature-image-with-caption' : ''}"><img src="${post.feature_image}"${post.feature_image_width ? ` width="${post.feature_image_width}"` : ''}${post.feature_image_alt ? ` alt="${post.feature_image_alt}"` : ''}></td>
@@ -973,6 +992,7 @@ ${ templateSettings.showBadge ? `
                                         <td class="feature-image-caption" align="center">${post.feature_image_caption}</td>
                                     </tr>
                                     ` : ``}
+
                                     <tr>
                                         <td class="${(templateSettings.bodyFontCategory === 'sans_serif') ? `post-content-sans-serif` : `post-content` }">
                                             <!-- POST CONTENT START -->

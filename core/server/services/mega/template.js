@@ -292,15 +292,14 @@ figure blockquote p {
 
 .site-url {
     background: #121FCF;
-background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
-background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
-background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 40px;
     letter-spacing: -0.1px;
     font-weight: 700;
-    text-transform: uppercase;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -323,6 +322,11 @@ background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
     font-weight: 300;
     text-align: center;
     padding-bottom: 30px;
+}
+
+img.fmz-title-img {
+    width:300px;
+    height:42px;
 }
 
 .post-title {
@@ -707,6 +711,11 @@ background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
 ------------------------------------- */
 @media only screen and (max-width: 620px) {
 
+    img.fmz-title-img {
+        width:200px;
+        height:28px;
+    }
+
     table.body {
         width: 100%;
         min-width: 100%;
@@ -964,7 +973,7 @@ ${ templateSettings.showBadge ? `
                                                     <td class="presented-by"><div style="width: 100% !important;"><a href="${site.url}">PRESENTED BY FMZ VENTURES</a></div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="site-url"><div style="width: 100% !important;"><a href="${site.url}">${site.title}</a></div></td>
+                                                    <td class="site-url"><div style="width: 100% !important;"><img class="fmz-title-img" src="https://firebasestorage.googleapis.com/v0/b/booktime-8d2b6.appspot.com/o/Screen%20Shot%202021-09-26%20at%201.04.48%20PM.png?alt=media&token=15bded6d-5370-4916-84dd-d680640425e2" /></div></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="post-meta ${templateSettings.titleAlignment === 'left' ? `post-meta-left` : ``}">
